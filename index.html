@@ -9,47 +9,81 @@
         height: 50px;
         margin: 10px;
       }
+      .image-container {
+      position: relative;
+      display: inline-block;
+      overflow: hidden;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      clip-path: circle(0% at 50% 50%);
+      transition: clip-path 0.5s ease-in-out;
+    }
+
+    .overlay.active {
+      clip-path: circle(100% at 50% 50%);
+    }
       /* border: 1px solid red; */
     </style>
   </head>
   <body>
     <!-- First row of icons -->
-    <a href="https://www.naver.com"
-      ><img
-        src="https://i.pinimg.com/564x/fb/71/04/fb71048e03a5ada757f70d61b583d0bf.jpg"
-    /></a>
-    <a href="https://www.google.com"
-      ><img
-        src="https://i.pinimg.com/564x/7e/a2/a0/7ea2a086cc5082330324a94c52a66531.jpg"
-    /></a>
+    <div class="image-container">
+      <a href="https://www.naver.com" id="image-link"> <!-- 변경: a 태그에 id 추가 -->
+        <img src="https://i.pinimg.com/564x/fb/71/04/fb71048e03a5ada757f70d61b583d0bf.jpg" alt="Naver" title="Naver"  id="clickable-image">
+      </a>
+      <div class="overlay"></div>
+    </div>
+    
+    <div class="image-container">
+      <a href="https://www.google.com" id="google-image-link">
+        <img src="https://i.pinimg.com/564x/7e/a2/a0/7ea2a086cc5082330324a94c52a66531.jpg" alt="Google" id="google-clickable-image">
+      </a>
+      <div class="overlay"></div>
+    </div>
+    
+
     <a href="https://www.youtube.com"
       ><img
         src="https://i.pinimg.com/564x/9b/92/db/9b92db8bd447999d6fab1491646ffda2.jpg"
     /></a>
+
     <a href="https://www.daum.net/"
       ><img
         src="https://blog.kakaocdn.net/dn/yElzG/btqw7QZODLs/iA6TBn80hto4lndolDKB00/img.jpg"
     /></a>
+
     <a href="https://www.dcinside.com/"
       ><img
         src="https://play-lh.googleusercontent.com/cL-tRMl6x0HCA3RO7vuWJ5bFkMZ_91Zp4Z9YwDDbaycrF1bQgmb7mTH8YRTMItzijPQ=w480-h960-rw"
     /></a>
+
     <a href="https://news.naver.com/"
       ><img
         src="https://cdn-1.webcatalog.io/catalog/naver-news/naver-news-icon-filled-256.png?v=1675613729154"
     /></a>
+
     <a href="https://www.fmkorea.com/"
       ><img
         src="https://image.fmkorea.com/files/attach/new2/20210327/486616/3320982972/3481966381/1285efcb38883c53ca40a6bb3bf87aea.png"
     /></a>
+
     <a href="https://namu.wiki/"
       ><img
         src="https://w.namu.la/s/895d8eaf4bbb3b9b2ca614bbf22cc8229ce77b2e780d3b63abac8f04510493038affe6e8be4eea6e33a6d1fb5c50733697da8edec268c09b1a585af1df7d11fbbe38a3baf46539fb7bb758df2ff554665af295df499ea3f2d2bf2d5ef708721c82a6d68bb70f67a17b3b2aa4191194b0"
     /></a>
+
     <a href="https://twitter.com/"
       ><img
         src="https://mblogthumb-phinf.pstatic.net/MjAxODA5MjhfNSAg/MDAxNTM4MTIxMDM1NjA5.fOUJ8LOkESsRyZuRstqRLfFe0Mqd38K3xB_gl9y6LfQg.aHO3CkaXIwH2u5nMmxED2St7Xq3ztEC7Dmbveqrcvfwg.PNG.dnduf75/%EB%A1%9C%EA%B3%A0%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C-%ED%8A%B8%EC%9C%84%ED%84%B0%EB%A1%9C%EA%B3%A0-png-2.png?type=w800"
     /></a>
+
     <a href="https://map.naver.com/"
       ><img
         src="https://play-lh.googleusercontent.com/yB6ePH3QA0EMU8qTqM5tOPtpZ8bZeIYhb9Oi2RHOy9YvK5fdxIlbN1H46QtdHNC_1g"
@@ -57,52 +91,65 @@
     <a href="https://www.tistory.com/"
       ><img src="https://t1.daumcdn.net/cfile/tistory/270D883555ED252B1B"
     /></a>
+
     <a href="https://www.coupang.com/"
       ><img
         src="https://image10.coupangcdn.com/image/mobile/v3/img_fb_like.png"
     /></a>
+
     <a href="https://shopping.naver.com/"
       ><img
         src="https://blog.kakaocdn.net/dn/beSCUm/btqNgusXfHQ/x0h3uyYKkLOpB81NNCA7Rk/img.png"
     /></a>
+
     <a href="https://www.instagram.com/"
       ><img
         src="https://i.pinimg.com/474x/7d/36/9f/7d369fb78ad668867000c0d987a1b70d.jpg"
     /></a>
+
     <a href="https://www.kakaocorp.com/"
       ><img src="https://cs.kakao.com/images/icon/img_kakaocs.png"
     /></a>
+
     <a href="https://bbs.ruliweb.com/"
       ><img
         src="https://play-lh.googleusercontent.com/8sIzgx8FrSvfEnufE0mxnh-lSg-7c3_m0RAzmKP4d2hZkhoEGnzRS_icpIjmkSzthAw"
     /></a>
+
     <a href="https://www.nate.com/"
       ><img
         src="https://play-lh.googleusercontent.com/m-ambtndWYHCvw2u2qcsEJDm8FJl1NAHSoKCyZW8u6qYd7nXLsYH_FLD75jApbq-w0I"
     /></a>
+
     <a href="https://www.inven.co.kr/"
       ><img
         src="https://w.namu.la/s/69c269d6aa9b34fece5189ff3e36445e62b5c0fdbdfb9418a86c9e86c762eaa244c80ddbbd6ddc3f6bccc232faa7297fcbfc5b2fdae9c9ab103acd5ab4bd8e27069ae1bee0c1021ad05837c7fdf4bf46520551ea8a2946c2397cc86b07877e8f"
     /></a>
+
     <a href="https://adison.co/"
       ><img
         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2EJuwWwsMshDBGHC6sTuV99-5H9FUr_8kH2V-69yn4uQFCZrpcgyg8soR_v7BbjhZZw8&usqp=CAU"
     /></a>
+
     <a href="https://www.ppomppu.co.kr/"
       ><img
         src="https://play-lh.googleusercontent.com/4zFZhgPFEELD6hKuUKRLMlLjnyV-fEKnuJ48EdtTm6TNw6ddTUsBCY-DdzBNJVn3uQU"
     /></a>
+
     <a href="https://www.facebook.com"
       ><img src="https://cdn-icons-png.flaticon.com/512/174/174848.png"
     /></a>
+
     <a href="https://www.betman.co.kr/"
       ><img
         src="https://yt3.googleusercontent.com/CBXLK46Pd6wSK9O5e29O6ROCMYFjRpOxwEXiI-eluK9Vfz00OnK93f7jMitqu8UJBVDZknG4IBQ=s900-c-k-c0x00ffffff-no-rj"
     /></a>
+
     <a href="https://theqoo.net/"
       ><img
         src="data:image/png;base64,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"
     /></a>
+
     <a href="http://m.newspic.kr/"
       ><img
         src="https://contents.nextunicorn.kr/company/6ade7198cc466f18/service/logo-df7a18281539723fb2e0658ca99baad5cb30.png?s=200x&t=cover"
@@ -382,5 +429,23 @@
       ><img
         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMWOMswY1r61XO2xI4Nog3EpqnUNA-xjO7oPqf4ZuVuRZJvNeW4QZn8fWEZkjx4xpmgcs&usqp=CAU"
     /></a>
+    <script>
+      const imageLink = document.getElementById('image-link','google-image-link'); // 변경: a 태그 요소 선택
+      const overlay = document.querySelector('.overlay');
+  
+      imageLink.addEventListener('click', (event) => { // 변경: 클릭 이벤트에 대한 이벤트 핸들러 수정
+        event.preventDefault(); // 기본 동작인 링크 이동을 막음
+        overlay.classList.add('active');
+        setTimeout(() => {
+          window.location.href = imageLink.href; // 변경: 일정 시간 후에 링크 이동
+        }, 500); // 변경: 이미지 효과가 사라지기 전까지의 대기 시간 설정 (0.5초)
+      });
+  
+      window.addEventListener('pageshow', (event) => { // 변경: 페이지가 다시 표시될 때 이벤트 핸들러 추가
+        if (event.persisted) {
+          overlay.classList.remove('active'); // 이미지 효과 초기화
+        }
+      });
+    </script>
   </body>
 </html>

@@ -15,13 +15,6 @@
       overflow: hidden;
     }
 
-    .image-container2 {
-      position: relative;
-      display: inline-block;
-      overflow: hidden;
-    }
-
-
     .overlay {
       position: absolute;
       top: 0;
@@ -44,13 +37,13 @@
   <body>
     <!-- First row of icons -->
     <div class="image-container">
-      <a href="https://www.naver.com" id="image-link"> <!-- 변경: a 태그에 id 추가 -->
+      <a href="https://www.naver.com" id="image-link">
         <img src="https://i.pinimg.com/564x/fb/71/04/fb71048e03a5ada757f70d61b583d0bf.jpg" alt="Naver" title="Naver"  id="clickable-image">
       </a>
       <div class="overlay"></div>
     </div>
     
-    <div class="image-container2">
+    <div class="image-container">
       <a href="https://www.google.com" id="google-image-link">
         <img src="https://i.pinimg.com/564x/7e/a2/a0/7ea2a086cc5082330324a94c52a66531.jpg" alt="Google" title="Google" id="google-clickable-image">
       </a>
@@ -506,7 +499,9 @@
     /></a>
     
     <script>
-      const imageLink = document.getElementById('image-link','google-image-link'); // 변경: a 태그 요소 선택
+      const imageLink = document.getElementById('image-link'); // 단일 id 선택
+      const googleImageLink = document.getElementById('google-image-link'); // 다른 id 선택
+
       const overlay = document.querySelector('.overlay');
   
       imageLink.addEventListener('click', (event) => { // 변경: 클릭 이벤트에 대한 이벤트 핸들러 수정

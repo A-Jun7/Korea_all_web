@@ -505,7 +505,7 @@
       const overlay = document.querySelector('.overlay');
   
       imageLink.addEventListener('click', (event) => { // 변경: 클릭 이벤트에 대한 이벤트 핸들러 수정
-        event.preventDefault(); // 기본 동작인 링크 이동을 막음---
+        event.preventDefault(); // 기본 동작인 링크 이동을 막음----
         overlay.classList.add('active');
         setTimeout(() => {
           window.location.href = imageLink.href; // 변경: 일정 시간 후에 링크 이동

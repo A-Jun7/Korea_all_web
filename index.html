@@ -3,6 +3,16 @@
   <head>
     <title>My Icon Webpage</title>
     <style>
+      header {
+        background-color: #f2f2f2;
+        padding: 20px;
+      }
+
+      footer {
+        background-color: #f2f2f2;
+        padding: 20px;
+      }
+      
       /* Optional CSS styling for the icons ーー  ---- */
       img {
         width: 100px;
@@ -35,6 +45,9 @@
     </style>
   </head>
   <body>
+    <header>
+
+    </header>
     <!-- First row of icons --->
     <div class="image-container">
       <a href="https://www.naver.com" id="image-link">
@@ -500,7 +513,7 @@
     
     <script>
       const imageLink = document.getElementById('image-link'); // 단일 id 선택
-      const googleImageLink = document.getElementById('google-image-link'); // 다른 id 선택
+      //const googleImageLink = document.getElementById('google-image-link'); // 다른 id 선택
 
       const overlay = document.querySelector('.overlay');
   
@@ -518,5 +531,9 @@
         }
       });
     </script>
+
+    <footer>
+
+    </footer>
   </body>
 </html>

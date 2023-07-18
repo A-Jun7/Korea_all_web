@@ -13,7 +13,7 @@
         padding: 20px;
       }
       
-      /* Optional CSS styling for the icons ーー  ---- */
+      /* Optional CSS styling for the icons ーーー  ---- */
       img {
         width: 100px;
         height: 100px;
@@ -40,6 +40,8 @@
       clip-path: circle(100% at 50% 50%);
     }
       /* border: 1px solid red; */
+
+      
 
       
     </style>
@@ -71,7 +73,7 @@
 
     <a href="https://www.daum.net/"
       ><img
-        src="https://blog.kakaocdn.net/dn/yElzG/btqw7QZODLs/iA6TBn80hto4lndolDKB00/img.jpg"
+        src="https://play-lh.googleusercontent.com/qx1y7J8zCnIgF0YG3Nj2Q4vyLCJfdzNRaNCyANVT3iPeZId4IO8T_OFlbTmHPUzPws0=w480-h960"
     /></a>
 
     <a href="https://www.dcinside.com/"
@@ -278,7 +280,7 @@
     /></a>
 
     <a href="https://www.cafe24.com/"
-      ><img src="https://m-img.cafe24.com/images/bi/cafe24/cafe24.gif"
+      ><img src="https://play-lh.googleusercontent.com/W56y7DNHvowezXXOXy_E7-1-89KauNXl9JlRw1qXuh30qkeThnWls-6aOPujRV68oRw=w480-h960"
     /></a>
 
     <a href="https://www.accuweather.com/"
@@ -512,24 +514,46 @@
     /></a>
     
     <script>
-      const imageLink = document.getElementById('image-link'); // 단일 id 선택
-      //const googleImageLink = document.getElementById('google-image-link'); // 다른 id 선택
+     
+        const links = document.querySelectorAll('a'); // 모든 a 태그 링크 선택
 
-      const overlay = document.querySelector('.overlay');
+        const overlay = document.querySelector('.overlay');
+
+        links.forEach((link) => { // 각 링크에 대해 반복
+          link.addEventListener('click', (event) => {
+            event.preventDefault();
+            overlay.classList.add('active');
+            setTimeout(() => {
+              window.location.href = link.href;
+            }, 500);
+          });
+        });
+
+        window.addEventListener('pageshow', (event) => {
+          if (event.persisted) {
+            overlay.classList.remove('active');
+          }
+        });
+
+
+      // const imageLink = document.getElementById('image-link'); // 단일 id 선택
+      // //const googleImageLink = document.getElementById('google-image-link'); // 다른 id 선택
+
+      // const overlay = document.querySelector('.overlay');
   
-      imageLink.addEventListener('click', (event) => { // 변경: 클릭 이벤트에 대한 이벤트 핸들러 수정
-        event.preventDefault(); // 기본 동작인 링크 이동을 막음----
-        overlay.classList.add('active');
-        setTimeout(() => {
-          window.location.href = imageLink.href; // 변경: 일정 시간 후에 링크 이동
-        }, 500); // 변경: 이미지 효과가 사라지기 전까지의 대기 시간 설정 (0.5초)
-      });
+      // imageLink.addEventListener('click', (event) => { // 변경: 클릭 이벤트에 대한 이벤트 핸들러 수정
+      //   event.preventDefault(); // 기본 동작인 링크 이동을 막음----
+      //   overlay.classList.add('active');
+      //   setTimeout(() => {
+      //     window.location.href = imageLink.href; // 변경: 일정 시간 후에 링크 이동
+      //   }, 500); // 변경: 이미지 효과가 사라지기 전까지의 대기 시간 설정 (0.5초)
+      // });
   
-      window.addEventListener('pageshow', (event) => { // 변경: 페이지가 다시 표시될 때 이벤트 핸들러 추가
-        if (event.persisted) {
-          overlay.classList.remove('active'); // 이미지 효과 초기화
-        }
-      });
+      // window.addEventListener('pageshow', (event) => { // 변경: 페이지가 다시 표시될 때 이벤트 핸들러 추가
+      //   if (event.persisted) {
+      //     overlay.classList.remove('active'); // 이미지 효과 초기화
+      //   }
+      // });
     </script>
 
     <footer>
